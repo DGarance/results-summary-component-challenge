@@ -24,21 +24,25 @@
 </head>
 
 <body>
-  <main>
-    <div class="score-container">
-      <h1> Your Result</h1>
-      <div class="circle-score">
-        <h2>76</h2>
-        <p>of 100</p>
+  <main class="main-container">
+    <div class="container">
+      <div class="score-container">
+        <h1> Your Result</h1>
+        <div class="circle-container">
+          <h2 class="circle-score">76</h2>
+          <p class="circle-score-points">of 100</p>
+        </div>
+        <h2 class="score-subtitle">Great</h2>
+        <p class="score-commentary"> You scored higher than 65% of the people who have taken these tests</p>
       </div>
-      <h2>Great</h2>
-      You scored higher than 65% of the people who have taken these tests.
-      <p></p>
+      <div class="summary-container">
+        <h2 class="summary-title">Summary</h2>
+        <ul>
+          <!--list item from data.json-->
+        </ul>
+        <button>Continue</button>
+      </div> 
     </div>
-    <ul>
-      <h2>Summary</h2>
-      <button>continue</button>
-    </ul>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
