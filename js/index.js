@@ -16,11 +16,15 @@ fetch("./data.json")
       listItem.classList.add("summary-item", `summary-item--${category.toLowerCase()}`);
       listItem.innerHTML = `
         <img src="${icon}" alt="${category} icon">
-        <h2 class="summary-category">${category}</h2>
-        <p class="summary-score">${score}<span>/100</span></p>
+        <p class="summary-category">${category}</p>
+        <p class="summary-score">${score}<span class="summary-score-total"> / 100</span></p>
       `;
 
       // On ajoute l'élément HTML à la liste
       list.appendChild(listItem);
+
+      // On sélectionne le paragraphe avec la classe "summary-category" et on lui ajoute la classe de réaction
+      const categoryParagraph = listItem.querySelector(".summary-category");
+      categoryParagraph.classList.add(`summary-category--${category.toLowerCase()}`);
     });
   });

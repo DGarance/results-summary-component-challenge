@@ -7,43 +7,28 @@
   <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
   <title>Frontend Mentor | Results summary component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
-  <main class="main-container">
-    <div class="container">
-      <div class="score-container">
-        <h1> Your Result</h1>
-        <div class="circle-container">
-          <h2 class="circle-score">76</h2>
-          <p class="circle-score-points">of 100</p>
-        </div>
-        <h2 class="score-subtitle">Great</h2>
-        <p class="score-commentary"> You scored higher than 65% of the people who have taken these tests</p>
+  <div class="summary-main-container">
+    <div class="result-container">
+      <h2 class="result-title">Your Result</h2>
+      <div class="circle-container">
+        <p class="circle-score"> 76
+          <span class="circle-total">of 100</span>
+        </p>
       </div>
-      <div class="summary-container">
-        <h2 class="summary-title">Summary</h2>
-        <ul>
-          <!--list item from data.json-->
-        </ul>
-        <button>Continue</button>
-      </div> 
+      <h3 class="result-paragraph-title">Great</h3>
+      <p class="result-paragraph-text">You scored higher than 65% of the people who have taken these tests.</p>
     </div>
-  </main>
+    <div class="summary">
+      <h2 class="summary-title">Summary</h2>
+      <ul class="summary-list">
+      </ul>
+      <button class="summary-btn">Continue</button>
+    </div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Garance</a>.

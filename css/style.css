@@ -2,196 +2,164 @@
 
 :root {
   /*Primary*/
-  --light-red: hsl(0, 100%, 67%);
-  --orangey-yellow: hsl(39, 100%, 56%);
-  --green-teal: hsl(166, 100%, 37%);
-  --cobalt-blue: hsl(234, 85%, 45%);
+  --text-red: hsl(0, 100%, 67%);
+  --text-orangey-yellow: hsl(39, 100%, 56%);
+  --text-green-teal: hsla(166, 100%, 37%);
+  --text-cobalt-blue: hsla(234, 85%, 45%);
+
+  /*Secondary*/
+  --light-red: hsla(0, 100%, 67%, 0.15);
+  --orangey-yellow: hsla(39, 100%, 56%, 0.15);
+  --green-teal: hsla(166, 100%, 37%, 0.15);
+  --cobalt-blue: hsla(234, 85%, 45%, 0.15);
 
   /*Gradients*/
-  --light-slate-blue: hsl(252, 100%, 67%);
-  --light-royal-blue: hsl(241, 81%, 54%);
+  --slate-blue: hsl(252, 100%, 67%);
+  --royal-blue: hsl(241, 81%, 54%);
   --violet-blue: hsla(256, 72%, 46%, 1);
-  --persian-blue: hsla(241, 72%, 46%, 0);
+  --persian-blue: hsla(241, 72%, 46%, 0.2);
 
   /*Neutral*/
   --white: hsl(0, 0%, 100%);
   --pale-blue: hsl(221, 100%, 96%);
-  --light-lavender: hsl(241, 100%, 89%);
-  --dark-gray-blue: hsl(228, 100%, 27%);
+  --lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
 
   /*Font-family*/
   --type-face: "Hanken Grotesk", sans-serif;
-
-  /*layout*/
-  --mobile-width: 375px;
-  --desktop-width: 1440px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--type-face);
+  font-weight: normal;
 }
 
 body {
-  font-family: var(--type-face);
-  font-size: 18px;
-  font-weight: 400;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-/* Styles for main container */
-.main-container {
+.summary-main-container {
   display: flex;
-  justify-content: center;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
 }
 
-/* Styles for score container */
-.score-container {
+.result-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  width: calc(0.2 * var(--desktop-width));
-    height: 100vh;
-  background-image: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
-  border-radius: 20px;
+  padding: 20px;
+  color: var(--white);
+  background-image: linear-gradient(var(--slate-blue), var(--royal-blue));
+  border-radius: 25px;
 }
 
-.score-container h1 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--light-lavender);
+.result-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--lavender);
 }
 
 .circle-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 180px;
-  width: 180px;
-  background-image: linear-gradient(var(--violet-blue), var(--persian-blue));
+  align-items: center;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  background-image: linear-gradient(var(--violet-blue), var(--persian-blue));
 }
 
 .circle-score {
-  font-size: 50px;
-  font-weight: 800;
-  margin: 0;
-  color: var(--white);
+  font-size: 56px;
+  line-height: 1.2;
 }
 
-.circle-score-points {
-  margin-top: 5px;
-  color: var(--light-lavender);
+.circle-total {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--lavender);
 }
 
-.score-subtitle {
-  font-size: 24px;
-  color: var(--white);
+.result-paragraph-title {
+  font-size: 28px;
+  margin-bottom: 5px;
 }
 
-.score-commentary {
-  margin: 0;
-  color: var(--light-lavender);
+.result-paragraph-text {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
-/* Styles for summary container */
-.summary-container {
-  padding: 0 50px 0 30px;
+.summary {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 25px;
 }
 
-.summary-title{
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--dark-gray-blue);
+.summary-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-gray-blue);
 }
 
-.summary-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .summary-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .summary-item--reaction {
-  background-color: hsla(0, 100%, 67%, 0.1);
-  color: var(--light-red);
+  background-color: var(--light-red);
 }
-
-.summary-category {
-  color: #1e3163;
-}
-
-.summary-score {
-  color: #1e3163;
-}
-
 .summary-item--memory {
-  background-color: hsla(39, 100%, 56%, 0.1);
-  color: var(--orangey-yellow);
+  background-color: var(--orangey-yellow);
 }
-
 .summary-item--verbal {
-  background-color: hsla(166, 100%, 37%, 0.1);
-  color: var(--green-teal);
+  background-color: var(--green-teal);
 }
-
 .summary-item--visual {
-  background-color: hsla(234, 85%, 45%, 0.1);
-  color: var(--cobalt-blue);
-}
-
-.summary-item img {
-  width: 30px;
-  margin-right: 10px;
+  background-color: var(--cobalt-blue);
 }
 
 .summary-category {
-  margin: 0;
-  font-size: 18px;
-  margin-right: 10px;
+  font-weight: bold;
+}
+.summary-category--reaction {
+  color: var(--text-red);
+}
+.summary-category--memory {
+  color: var(--text-orangey-yellow);
+}
+.summary-category--verbal {
+  color: var(--text-green-teal);
+}
+.summary-category--visual {
+  color: var(--text-cobalt-blue);
 }
 
 .summary-score {
-  margin: 0;
-  font-size: 16px;
+  color: var(--dark-gray-blue);
+  font-size: 18px;
   font-weight: bold;
 }
 
-.summary-score span {
-  font-size: 14px;
-  font-weight: normal;
-}
-
-/* Styles for button */
-button {
-  background-color: #1e3163;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #2e4e87;
-}
 /* Styles for attribution */
 .attribution {
   font-size: 11px;
