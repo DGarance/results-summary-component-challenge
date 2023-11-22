@@ -8,10 +8,10 @@
   --text-cobalt-blue: hsla(234, 85%, 45%);
 
   /*Secondary*/
-  --light-red: hsla(0, 100%, 67%, 0.15);
-  --orangey-yellow: hsla(39, 100%, 56%, 0.15);
-  --green-teal: hsla(166, 100%, 37%, 0.15);
-  --cobalt-blue: hsla(234, 85%, 45%, 0.15);
+  --light-red: hsla(0, 100%, 67%, 0.1);
+  --orangey-yellow: hsla(39, 100%, 56%, 0.1);
+  --green-teal: hsla(166, 100%, 37%, 0.1);
+  --cobalt-blue: hsla(234, 85%, 45%, 0.1);
 
   /*Gradients*/
   --slate-blue: hsl(252, 100%, 67%);
@@ -37,6 +37,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
 }
@@ -46,6 +49,7 @@ body {
   flex-direction: column;
   width: 100%;
   max-width: 400px;
+  box-shadow: 15px 15px 40px 0 var(--pale-blue);
 }
 
 .result-container {
@@ -61,6 +65,7 @@ body {
 
 .result-title {
   font-size: 20px;
+  padding: 20px;
   font-weight: bold;
   color: var(--lavender);
 }
@@ -90,12 +95,14 @@ body {
 .result-paragraph-title {
   font-size: 28px;
   margin-bottom: 5px;
+  font-weight: 500;
 }
 
 .result-paragraph-text {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 5px;
+  color: var(--lavender);
 }
 
 .summary {
@@ -140,6 +147,7 @@ body {
 
 .summary-category {
   font-weight: bold;
+  margin-right: 100px;
 }
 .summary-category--reaction {
   color: var(--text-red);
@@ -156,8 +164,58 @@ body {
 
 .summary-score {
   color: var(--dark-gray-blue);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
+}
+
+.summary-score-total {
+  opacity: 0.6;
+  font-weight: bold;
+}
+.summary-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 35px;
+  border: none;
+  color: var(--white);
+  background-color: var(--dark-gray-blue);
+  font-size: 18px;
+  transition: 0.5s;
+}
+.summary-btn:hover {
+  background-color: var(--royal-blue);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+  .summary-main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 25px;
+  }
+  .result-container {
+    width: 50%;
+  }
+  .result-title {
+    font-size: 24px;
+  }
+
+  .result-paragraph-title,
+  .result-paragraph-text {
+    padding: 25px 25px 0 25px;
+  }
+
+  .result-paragraph-title {
+    font-weight: 600;
+  }
+
+  .circle-score {
+    font-size: 65px;
+    font-weight: 900;
+  }
 }
 
 /* Styles for attribution */
